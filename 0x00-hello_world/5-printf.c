@@ -1,7 +1,7 @@
 #include<stdio.h>
 
 /*
- * main - Entry point
+ * Main - Entry point
  *
  * Description - with proper grammer, but the outcome is a piece of art
  *
