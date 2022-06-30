@@ -1,9 +1,11 @@
 #include<stdio.h>
 
 /*
- * main - entry point
- * description - with proper grammer, but the outcome is a piece of art
- * return - 0
+ * main - Entry point
+ *
+ * Description - with proper grammer, but the outcome is a piece of art
+ *
+ * Return - always 0 (success)
  */
 int main(void)
 {
