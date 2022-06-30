@@ -5,10 +5,10 @@
  *
  * Description: prints out using puts
  *
- * return: always 0 (succes)
- */ 
+ * Return: always 0 (succes)
+ */
 int main(void)
 {
 	puts("\"Programming is like building a multilingual puzzle");
-	return(0);
+	return (0);
 }
