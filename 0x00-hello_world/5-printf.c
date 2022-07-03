@@ -1,7 +1,8 @@
 #include<stdio.h>
 
 /**
- * main - program that prints exactly with proper grammar, but the outcome is a piece of art.
+ * main - program that prints exactly with proper grammar, 
+ * but the outcome is a piece of art.
  * description: using main.
  *
  * Return: Always 0.
