@@ -3,10 +3,10 @@
 /**
  * main - prints _putchar, followed by a new line.
  *
- * return: 0.
+ * Return: 0.
  */
 
-int main(void)/* this specifies there are no arguments taken by main*/
+int main(void)
 {
 	_putchar('_');
 	_putchar('p');
