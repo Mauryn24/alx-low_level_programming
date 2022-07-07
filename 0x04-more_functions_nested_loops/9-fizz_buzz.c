@@ -6,10 +6,10 @@
  * Buzz, and for multiples of both three and five, FizzBuzz.
  * Return: 0
  */
-int main (void)
+int main(void)
 {
 	int v;
-	
+
 	for (v = 1; v <= 100; v++)
 	{
 		if ((v % 3) == 0 && (v % 5) == 0)
@@ -30,4 +30,3 @@ int main (void)
 
 	return (0);
 }
-
