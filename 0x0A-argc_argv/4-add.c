@@ -1,32 +1,56 @@
-#include <stdlib.h>
-#include <stdio.h>
-#include "main.h"
+#include <stdio.h> /* printf */
+#include <stdlib.h> /* atoi */
+#include <stdbool.h> /* bool data type */
 
 /**
- * main -  adds positive numbers.
- * @argc: arguement count
- * @argv: arguement vector
- * Return: 0 but returns 1 if
- * the string is a number
+ * is_num - iterate through each argv to test if it's a number
+ * @argvv: a argv
+ * Return: true only if entire string is a number, false if not
+ */
+
+bool is_num(char *argvv)
+{
+	int j = 0;
+
+	for (j = 0; argvv[j]; j++)
+	{
+		if (!(argvv[j] >= '0' && argvv[j] <= '9'))
+			return (0);
+	}
+	return (1);
+}
+/**
+ *  main - print sum if all arguments given are numbers
+ *  @argc: argument counter
+ *  @argv: arguments
+ *  Return: 0 on success, 1 if an argument wasn't a number
  */
 
 int main(int argc, char *argv[])
 {
-	int i, j, sum = 0;
+	int i = 1;
+	int sum = 0;
 
-	for (i = 1; i < argc; i++)
+	/* validate input */
+	if (argc == 1)
 	{
-		for (j = 0; argv[i][j] != '\0'; j++)
+		printf("0\n");
+		return (0);
+	}
+	/* check all arguments to add numbers */
+	while (i < argc)
+	{
+		if (is_num(argv[i]))
 		{
-			if (!isdigit(argv[i][j]))
-			{
-				printf("Error\n");
-				return (1);
-			}
+			sum += atoi(argv[i]);
 		}
-		sum += atoi(argv[i]);
+		else
+		{
+			printf("Error\n");
+			return (1);
+		}
+		i++;
 	}
 	printf("%d\n", sum);
 	return (0);
 }
-
