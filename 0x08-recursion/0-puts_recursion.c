@@ -7,11 +7,12 @@
 
 void _puts_recursion(char *s)
 {
-	if (*s == '\0')
+	if (*s == '\0') /*base case*/
 	{
-		puts("");
+		puts("");/*prints a new line*/
 		return;
 	}
-	putchar(*s);
+	putchar(*s);/*prints a new character*/
 	_puts_recursion(s + 1);
+	/*recursive call that prints _puts_recursions with next char*/
 }
