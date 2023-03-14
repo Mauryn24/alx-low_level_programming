@@ -9,26 +9,28 @@
  */
 char *_strdup(char *str)
 {
-	char *p;
-	unsigned int i, len;
+	char *duplicate_str;
+	int len = 0, i = 0;
 
+	/*check if input string is NULL*/
 	if (str == NULL)
 		return (NULL);
-
 	/*determine length of input string*/
-	while (str[len])
-		len++;
+	while (*(str + i))
+		len++, i++;
+	len++;
+	duplicate_str = (char *)malloc(sizeof(char) * len);
 
-	/*allocating memory for copied string*/
-	/*len + 1 accounts for null character*/
-	p = malloc(sizeof(char) * (len + 1));
-
-	if (p == NULL)
+	/*check if memory is allocated*/
+	if (duplicate_str == NULL)
 		return (NULL);
-	/*copy input string to new allocated memory*/
-	/*iterate thru a while loop until '\0' is reached*/
-	while ((p[i] = str[i]) != '\0')
+	/*copying the input string to allocated memory*/
+	i = 0;
+	while (i < len)
+	{
+		*(duplicate_str + i) = *(str + i);
 		i++;
-	/*return copied string*/
-	return (p);
+	}
+	/*return the copied string*/
+	return (duplicate_str);
 }
