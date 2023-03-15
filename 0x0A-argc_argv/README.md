@@ -1,1 +1,1 @@
-arguements in c
+static libraries in c
