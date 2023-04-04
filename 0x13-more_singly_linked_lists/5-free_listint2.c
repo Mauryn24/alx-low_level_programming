@@ -7,17 +7,17 @@
  */
 void free_listint2(listint_t **head)
 {
-	/* Declare a pointer to the current node*/
-	listint_t *current;
+	/* Declare a pointer to the b node*/
+	listint_t *b;
 
 	if (head == NULL)
 		return (NULL);
 	/* Traverse the list, freeing each node as we go*/
-	while (*head != NULL)
+	while (*head)
 	{
-		current = *head;
+		b = *head;
 		*head = (*head)->next;
-		free(current);
+		free(b);
 	}
 
 	/*Set the head pointer to NULL*/
