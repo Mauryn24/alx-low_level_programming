@@ -10,13 +10,11 @@ void free_listint2(listint_t **head)
 	/* Declare a pointer to the b node*/
 	listint_t *b;
 
-	if (head == NULL)
-		return (NULL);
 	/* Traverse the list, freeing each node as we go*/
-	while (*head)
+	while (*head != NULL)
 	{
 		b = *head;
-		b = (*head)->next;
+		*head = (*head)->next;
 		free(b);
 	}
 
