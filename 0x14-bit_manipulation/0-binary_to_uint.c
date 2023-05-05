@@ -9,18 +9,21 @@
 
 unsigned int binary_to_uint(const char *b)
 {
-	/*i - iterates through the binary string*/
-	/*a - holds unsigned int value*/
-	unsigned int a = 0 ;
-	int length = strlen(b);
-	int i;
+        /*i - iterates through the binary string*/
+        /*a - holds unsigned int value*/
+        unsigned int i = 0, a;
 
-	if (b == NULL)
-		return (0);
-	for (i = 0; i < length; i++)
-	{
-		if (b[length - i - 1] == '1')
-			a += pow(2, i);
-	}
-	return (a);
+        if (b == NULL)
+                return (0);
+        /*iterate through binary string pointed by b*/
+        while (b[i])
+        {
+                if (!(b[i] == '0' || b[i] == '1'))
+                        return (0);
+                a <<= 1;
+                if (b[i] == '1')
+                        a += 1;
+                i++;
+        }
+        return (a);
 }
