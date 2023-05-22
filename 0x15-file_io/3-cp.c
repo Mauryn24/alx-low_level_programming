@@ -1,12 +1,10 @@
 #include "main.h"
-
 /**
  * main - copies content of a file
  * @argc: arguement count
  * @argv: arguement vector
  * Return: 0
  */
-
 int main(int argc, char *argv[])
 {
 	int fd1, fd2, chars_read, chars_written, file_closed;
@@ -15,7 +13,7 @@ int main(int argc, char *argv[])
 
 	if (argc != 3)
 	{
-		dprintf(STDERR_FILENO, "Usage: cp file_from file-to\n");
+		dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n");
 		exit(97);
 	}
 	fd1 = open(argv[1], O_RDONLY, 0);
@@ -46,14 +44,8 @@ int main(int argc, char *argv[])
 	}
 	file_closed = close(fd1);
 	if (file_closed != 0)
-	{
-		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fd1);
-		exit(100);
-	}
+		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fd1), exit(100);
 	if (f2_closed != 0)
-	{
-		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fd2);
-		exit(100);
-	}
+		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fd2), exit(100);
 	return (0);
 }
