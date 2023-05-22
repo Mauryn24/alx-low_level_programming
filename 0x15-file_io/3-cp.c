@@ -11,7 +11,6 @@ int main(int argc, char *argv[])
 {
 	int fd1, fd2, chars_read, chars_written, file_closed;
 	int f2_closed = 0;
-	int return_value = 0;
 	char buf[1024];
 
 	if (argc != 3)
@@ -56,7 +55,5 @@ int main(int argc, char *argv[])
 		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fd2);
 		exit(100);
 	}
-	if (file_closed == 0 && f2_closed == 0)
-		return_value = 1;
 	return (0);
 }
