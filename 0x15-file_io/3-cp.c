@@ -11,6 +11,7 @@ int main(int argc, char *argv[])
 {
 	int fd1, fd2, chars_read, chars_written, file_closed;
 	int f2_closed = 0;
+	int return_value = 0;
 	char buf[1024];
 
 	if (argc != 3)
@@ -27,7 +28,7 @@ int main(int argc, char *argv[])
 	fd2 = open(argv[2], O_CREAT | O_TRUNC | O_WRONLY, 0664);
 	if (fd2 == -1)
 	{
-		dprintf(STDERR_FILENO, "Error: Can't write to  %s\n", argv[2]);
+		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
 		exit(99);
 	}
 	while ((chars_read = read(fd1, buf, 1024)) > 0)
@@ -55,5 +56,7 @@ int main(int argc, char *argv[])
 		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fd2);
 		exit(100);
 	}
+	if (file_closed == 0 && f2_closed == 0)
+		return_value = 1;
 	return (0);
 }
