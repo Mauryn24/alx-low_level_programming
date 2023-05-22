@@ -27,7 +27,7 @@ int main(int argc, char *argv[])
 	fd2 = open(argv[2], O_CREAT | O_TRUNC | O_WRONLY, 0664);
 	if (fd2 == -1)
 	{
-		dprintf(STDERR_FILENO, "Error: Can't write to file %s\n", argv[2]);
+		dprintf(STDERR_FILENO, "Error: Can't write to  %s\n", argv[2]);
 		exit(99);
 	}
 	while ((chars_read = read(fd1, buf, 1024)) > 0)
@@ -35,7 +35,7 @@ int main(int argc, char *argv[])
 		chars_written = write(fd2, buf, chars_read);
 		if (chars_written != chars_read)
 		{
-			dprintf(STDERR_FILENO, "Error: Can't write to file %s\n", argv[2]);
+			dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
 			exit(99);
 		}
 	}
