@@ -9,7 +9,8 @@
 
 int main(int argc, char *argv[])
 {
-	int fd1, fd2, chars_read, chars_written, file_closed, f2_closed;
+	int fd1, fd2, chars_read, chars_written, file_closed;
+	int f2_closed = 0;
 	char buf[1024];
 
 	if (argc != 3)
